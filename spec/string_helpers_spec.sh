@@ -16,4 +16,22 @@ Describe 'Evaluating helper functions: '
         End
     End
 
+    Describe 'The split function'
+        It 'splits a string on a delimiter'
+            When call split "apples,oranges,pears,grapes" ","
+            The output should eq "apples
+oranges
+pears
+grapes"
+        End
+       It 'splits a string on a delimiter'
+            When call split "1, 2, 3, 4, 5" ", "
+            The output should eq '1
+2
+3
+4
+5'
+        End
+    End
+
 End
