@@ -25,4 +25,4 @@ jobs:
         run: ./setup-action.sh
 
       - name: Run ShellSpec tests
-        run: shellspec -s /bin/bash
+        run: shellspec -s /bin/bash --jobs 4 --kcov
