@@ -7,8 +7,8 @@ echo "Shellspec installed"
 shellspec -v
 
 # compile kcov, should be cloned via action
-cd /var/kcov
-cmake /var/kcov
+cd /home/runner/work/bloomshell/kcov
+cmake /home/runner/work/bloomshell/kcov
 make
 sudo make install
 
