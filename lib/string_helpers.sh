@@ -1,5 +1,24 @@
 #!/bin/env bash
 
+# ------------------------------------------------------------------------------
+# SCRIPT NAME: string_helpers.sh
+# DESCRIPTION: Generic string helpers and utilities.
+# VERSION: 1.0
+# AUTHOR: Ris Adams
+# CREATED DATE: 2024-01-22
+# LAST UPDATED: 2024-01-22
+# ------------------------------------------------------------------------------
+# PROJECT INFO:
+# Project Name: Bloomshell
+# Repository: https://github.com/risadams/bloomshell
+# ------------------------------------------------------------------------------
+
+if [ -n "$_BLOOMSH_STRING_HELPERS_SOURCED" ]; then
+  return 0
+fi
+
+_BLOOMSH_STRING_HELPERS_SOURCED=1
+
 # TRIM_STRING(1)              User Commands              TRIM_STRING(1)
 #
 # NAME
