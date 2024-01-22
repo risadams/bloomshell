@@ -22,7 +22,7 @@ jobs:
         run: sudo apt-get install -y build-essential cmake binutils-dev libssl-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev
 
       - name: Set up ShellSpec
-        run: sudo ./setup-action.sh
+        run: ./setup-action.sh
 
       - name: Run ShellSpec tests
         run: shellspec -s /bin/bash
