@@ -2,18 +2,18 @@ name: ShellSpec Test
 
 on:
   push:
-  workflow_dispatch:    
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up ShellSpec
-      run: ./setup-action.sh
+      - name: Set up ShellSpec
+        run: ./setup-action.sh
 
-    # - name: Run ShellSpec tests
-    #   run: shellspec
+      - name: Run ShellSpec tests
+        run: shellspec
