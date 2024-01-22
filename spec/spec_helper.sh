@@ -1,9 +1,9 @@
-# shellcheck shell=sh
+#shellcheck shell=bash
 
 # Defining variables and functions here will affect all specfiles.
 # Change shell options inside a function may cause different behavior,
 # so it is better to set them here.
-set -eu
+# set -eu
 
 # This callback function will be invoked only once before loading specfiles.
 spec_helper_precheck() {
