@@ -1,4 +1,4 @@
-#/bin/sh
+#!/usr/bin/env bash
 
 set -eu
 VERSION="0.0.1"
