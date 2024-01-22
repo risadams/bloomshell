@@ -1,0 +1,12 @@
+on: 
+  - push
+  - workflow_dispatch
+
+
+jobs:
+  test:
+    runs-on: shellspec/shellspec:kcov
+
+    steps:
+      - name: "Execute Shellspec tests"
+        run: docker run -it --rm -v "$PWD:/" shellspec/shellspec
