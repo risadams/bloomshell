@@ -1,3 +1,3 @@
 #/bin/sh
 
-echo "Blooming test runner"
+curl -fsSL https://git.io/shellspec | sh -s -- --yes
