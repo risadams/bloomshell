@@ -1,12 +1,22 @@
-on: 
-  - push
-  - workflow_dispatch
+name: ShellSpec Test
 
+on:
+  push:
+  workflow_dispatch:    
 
 jobs:
   test:
-    runs-on: shellspec/shellspec:kcov
+    runs-on: ubuntu-latest
 
     steps:
-      - name: "Execute Shellspec tests"
-        run: docker run -it --rm -v "$PWD:/" shellspec/shellspec
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up ShellSpec
+      run: |
+        wget -O shellspec https://git.io/shellspec
+        chmod +x shellspec
+        sudo mv shellspec /usr/local/bin/
+
+    - name: Run ShellSpec tests
+      run: shellspec
