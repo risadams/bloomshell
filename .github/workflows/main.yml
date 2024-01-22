@@ -13,8 +13,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up ShellSpec
-      run: |
-        wget -O shellspec https://git.io/shellspec
+      run: |        
+        curl -fsSL https://git.io/shellspec | sh -s -- --yes
         chmod +x shellspec
         sudo mv shellspec /usr/local/bin/
 
