@@ -8,9 +8,9 @@ shellspec -v
 
 # compile kcov, should be cloned via action
 cd $HOME/kcov
-cmake .
+cmake $HOME/kcov
 make
-make install
+sudo make install
 
 # path for both shellspac and kcov
 export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
