@@ -54,7 +54,8 @@ _BLOOMSH_STRING_HELPERS_SOURCED=1
 #        Written by Ris Adams.
 #
 trim_string() {
-  : "${1#"${1%%[![:space:]]*}"}"
-  : "${_%"${_##*[![:space:]]}"}"
-  printf '%s\n' "$_"
+  local var="$1"
+  var="${var#"${var%%[![:space:]]*}"}" # Remove leading whitespace characters
+  var="${var%"${var##*[![:space:]]}"}" # Remove trailing whitespace characters
+  printf '%s\n' "$var"
 }
