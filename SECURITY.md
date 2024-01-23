@@ -5,7 +5,7 @@ If you believe you have found a security vulnerability, please report it to us a
 
  - We do not offer support 
  - We do not offer a bug bounty program.
- - We make provide no warranty.
+ - We provide no warranty.
 
  While we will do our best to address security concerns in a timely manner, we offer no guarantee on timeframe.
 
