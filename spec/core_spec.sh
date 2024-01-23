@@ -2,14 +2,10 @@
 
 Describe 'Evaluating source_lib mock: '
   Include lib/core.sh
-  BeforeAll 'setup_working_directory'
 
   # Use current path as default.
   # When running as a Github action, find the working directory.
   work_dir="${GITHUB_WORKSPACE:-$(pwd)}"
-  setup_working_directory() {
-    echo "Working in $work_dir, currently $(pwd)"
-  }
 
   It 'Loads sh libs'
     When call source_lib "$work_dir/spec/support/libtest1"
