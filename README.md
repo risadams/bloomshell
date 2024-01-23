@@ -102,11 +102,6 @@
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
 See the [open issues](https://github.com/risadams/bloomshell/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -149,7 +144,7 @@ This is free and unencumbered software released into the public domain. See `LIC
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [ShellSpec](https://github.com/shellspec/shellspec) - BDD Unit testing framework
+- [ShellSpec](https://github.com/shellspec/shellspec) - BDD Unit testing framework
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
