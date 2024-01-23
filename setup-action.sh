@@ -7,7 +7,10 @@ echo "Shellspec installed"
 shellspec -v
 
 # compile kcov, should be cloned via action
-cd "$GITHUB_WORKSPACE/kcov"
+cd "$GITHUB_WORKSPACE/kcov" || {
+  echo "Failure to find kcov root dir."
+  exit 1
+}
 cmake "$GITHUB_WORKSPACE/kcov"
 make
 sudo make install
