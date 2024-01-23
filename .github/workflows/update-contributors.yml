@@ -4,8 +4,7 @@ on:
     - cron: "0 0 1 * *"  
   workflow_dispatch:
 
-permissions:
-    actions: write
+permissions: write-all
 
 jobs:
   main:
