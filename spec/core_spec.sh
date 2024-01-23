@@ -3,25 +3,23 @@
 Describe 'Evaluating source_lib mock: '
   Include lib/core.sh
 
-SELF=$(readlink -f "$0")
-BLOOM_ROOT=${SELF%/*}
-
-echo $SELF
-echo $BLOOM_ROOT
+  # Use current path as default.
+  # When running as a Github action, find the working directory.
+  work_dir="${GITHUB_WORKSPACE:-.}"
 
   It 'Loads sh libs'
-    When call source_lib "spec/support/libtest1"
+    When call source_lib "$work_dir/spec/support/libtest1"
     The output should eq ''
   End
   
   It 'lib error on missing dir'
-    When call source_lib "spec/support/missing"
-    The output should eq 'Error: The directory spec/support/missing does not exist.'
+    When call source_lib "$work_dir/spec/support/missing"
+    The output should eq "Error: The directory $work_dir/spec/support/missing does not exist."
   End
 
   load_dir_twice() {
-    source_lib "spec/support/libtest1"
-    source_lib "spec/support/libtest1"
+    source_lib "$work_dir/spec/support/libtest1"
+    source_lib "$work_dir/spec/support/libtest1"
   }  
 
   It 'Loads sh libs only once'
