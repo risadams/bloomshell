@@ -61,6 +61,8 @@ DOC
     for script_file in "$dir"/*.sh; do
       # Check if the file exists and is readable
       if [ -f "$script_file" ] && [ -r "$script_file" ]; then
+        # Disable shellcheck complaining about variables in sourced files
+        # shellcheck disable=SC1090
         source "$script_file"
       fi
     done
