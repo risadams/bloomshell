@@ -1,2 +1,7 @@
 # code coverage
 coverage/
+
+# helper scripts
+
+# calls shellspec --shell bash --kcov
+run-spec.sh
