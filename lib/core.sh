@@ -23,13 +23,12 @@ fi
 
 _BLOOMSH_CORE_SOURCED=1
 
-: <<'SOURCE_LIB'
+source_lib() {
+  : <<'DOC'
  NAME
         source_lib - Sources shell script files from a specified directory.
-
     SYNOPSIS
         source_lib [DIRECTORY]
-
     DESCRIPTION
         source_lib is a function that takes a single argument, a directory path,
         and sources all shell script files (.sh) located within that directory.
@@ -41,28 +40,20 @@ _BLOOMSH_CORE_SOURCED=1
         the terminal, indicating the file has been sourced.
 
         If the specified directory does not exist, an error message is displayed.
-
     ARGUMENTS
         DIRECTORY
             A path to the directory containing shell script files to be sourced.
             The directory must exist and contain files with a .sh extension.
-
     OUTPUT
         For each sourced script file, a confirmation message "Sourced: [FILE_PATH]"
         is displayed. If the directory does not exist, an error message is shown.
-
     EXAMPLES
         source_lib "/path/to/scripts"
             This will source all .sh files located in '/path/to/scripts'.
-
     NOTES
         This function does not recursively source files in subdirectories.
         It only sources files directly within the specified directory.
-
-    AUTHOR
-        Written by Ris Adams.
-SOURCE_LIB
-source_lib() {
+DOC
   local dir="$1"
 
   # Check if the directory exists
