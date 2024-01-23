@@ -3,6 +3,12 @@
 Describe 'Evaluating source_lib mock: '
   Include lib/core.sh
 
+SELF=$(readlink -f "$0")
+BLOOM_ROOT=${SELF%/*}
+
+echo $SELF
+echo $BLOOM_ROOT
+
   It 'Loads sh libs'
     When call source_lib "spec/support/libtest1"
     The output should eq ''
