@@ -2,7 +2,7 @@
 
 # grab shellspec
 curl -fsSL https://git.io/shellspec | sh -s -- --yes
-chmod +x $HOME/.local/bin/shellspec
+chmod +x "$HOME/.local/bin/shellspec"
 echo "Shellspec installed"
 shellspec -v
 

@@ -9,3 +9,5 @@ BLOOM_ROOT=${SELF%/*}
 # Load core library utilities
 source "$BLOOM_ROOT/lib/core.sh"
 source_lib "$BLOOM_ROOT/lib"
+
+echo "Running $SCRIPT_NAME v$VERSION."
