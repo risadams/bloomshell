@@ -6,10 +6,9 @@ Describe 'Evaluating source_lib mock: '
 
   # Use current path as default.
   # When running as a Github action, find the working directory.
-  work_dir="${GITHUB_WORKSPACE:-.}"
+  work_dir="${GITHUB_WORKSPACE:-$(pwd)}"
   setup_working_directory() {
-    cd $work_dir
-    echo "Working in $work_dir"
+    echo "Working in $work_dir, currently $(pwd)"
   }
 
   It 'Loads sh libs'
