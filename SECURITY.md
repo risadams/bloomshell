@@ -11,7 +11,7 @@ If you believe you have found a security vulnerability, please report it to us a
 
 ## Reporting Security Issues
 
-- [Open an issue!](https://github.com/selectize/selectize.js/issues/new)
+- [Open an issue!](https://github.com/risadams/bloomshell/issues/new)
 
 Please include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:
 
