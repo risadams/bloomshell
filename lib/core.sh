@@ -139,6 +139,8 @@ __is_plugin() {
 }
 
 # If any plugins are defined, attempt to load them
+# Disable warning about "plugins" being undefined
+# shellcheck disable=SC2154
 if [[ -n ${plugins+x} && ${#plugins[@]} -ne 0 ]]; then
   for plugin in "${plugins[@]}"; do
     if __is_plugin "$BLOOM_ROOT" "$plugin"; then
