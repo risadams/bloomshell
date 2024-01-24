@@ -1,13 +1,21 @@
 #shellcheck shell=bash
 
+export BLOOMSH_VERSION="1.0-test-harness"
+
 Describe 'Evaluating source_lib mock: '
   Include lib/core.sh
+  AfterRun 'unset_bloomsh_version'
+
+  unset_bloomsh_version() {
+    unset BLOOMSH_VERSION
+  }
 
   # Use current path as default.
   # When running as a Github action, find the working directory.
   work_dir="${GITHUB_WORKSPACE:-$(pwd)}"
 
   It 'Loads sh libs'
+    echo "$BLOOMSH_VERSION"
     When call source_lib "$work_dir/spec/support/libtest1"
     The output should eq ''
   End
