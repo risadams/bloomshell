@@ -3,9 +3,9 @@
 We take the security of our software products and services seriously.
 If you believe you have found a security vulnerability, please report it to us as described below.
 
- - We do not offer support 
- - We do not offer a bug bounty program.
- - We provide no warranty.
+- We do not offer support 
+- We do not offer a bug bounty program.
+- We provide no warranty.
 
  While we will do our best to address security concerns in a timely manner, we offer no guarantee on timeframe.
 
