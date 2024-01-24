@@ -35,8 +35,9 @@ plugins=(
 # Disable shellcheck complaining about variables in sourced files
 # shellcheck disable=SC1090
 source "$BLOOM_ROOT/lib/core.sh"
+
 # strip duplicate entries from the path
-export PATH=$(echo -n $PATH | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
+export PATH="$(echo -n $PATH | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')"
 
 echo "Running $SCRIPT_NAME v$BLOOMSH_VERSION."
 echo "Loaded libs: $BLOOMSH_LIBS_STRING"

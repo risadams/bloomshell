@@ -40,15 +40,15 @@ __source() {
   case "$filepath" in
   lib/*) # lib_name from lib/lib_name.sh
     context="lib:$(basename "${filepath%.*}")"
-    BLOOMSH_LIBS+=($context)
+    BLOOMSH_LIBS+=("$context")
     ;;
   commands/*) # commands_name from commands/command_name.sh
     context="commands:$(basename "${filepath%.*}")"
-    BLOOMSH_CMDS+=($context)
+    BLOOMSH_CMDS+=("$context")
     ;;
   plugins/*) # plugin_name from plugins/plugin_name/file.sh
     context="plugins:$(basename "$(dirname "$filepath")")"
-    BLOOMSH_PLUGINS+=($context)
+    BLOOMSH_PLUGINS+=("$context")
     ;;
   esac
 
@@ -117,14 +117,13 @@ __is_plugin() {
   test -f "$base_dir/plugins/$name/$name.plugin.sh"
 }
 
-for plugin in ${plugins[@]}; do
+for plugin in "${plugins[@]}"; do
   if __is_plugin "$BLOOM_ROOT" "$plugin"; then
     __source "plugins/$plugin/$plugin.plugin.sh"
   else
     echo "[BLOOM] plugin '$plugin' not found"
   fi
 done
-unset plugins
 
 # Export the loaded libs,cmds,plugins for use in other scripts
 BLOOMSH_LIBS_STRING=$(
