@@ -33,13 +33,6 @@ declare -a BLOOMSH_LIBS
 declare -a BLOOMSH_CMDS
 declare -a BLOOMSH_PLUGINS
 
-is_plugin() {
-  local base_dir=$1
-  local name=$2
-  test -f "$base_dir/plugins/$name/$name.plugin.sh" ||
-    test -f "$base_dir/plugins/$name/_$name"
-}
-
 __source() {
   local context filepath="$1"
 
@@ -118,10 +111,20 @@ DOC
 source_lib "$BLOOM_ROOT/lib"
 
 # are there any plugins?
+__is_plugin() {
+  local base_dir=$1
+  local name=$2
+  test -f "$base_dir/plugins/$name/$name.plugin.sh"
+}
+
 for plugin in ${plugins[@]}; do
-  __source "plugins/$plugin/$plugin.plugin.sh"
+  if __is_plugin "$BLOOM_ROOT" "$plugin"; then
+    __source "plugins/$plugin/$plugin.plugin.sh"
+  else
+    echo "[BLOOM] plugin '$plugin' not found"
+  fi
 done
-unset plugin
+unset plugins
 
 # Export the loaded libs,cmds,plugins for use in other scripts
 BLOOMSH_LIBS_STRING=$(
