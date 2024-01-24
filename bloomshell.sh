@@ -25,7 +25,8 @@ export BLOOMSH_VERSION="0.0.1"
 
 ## Setup Plugins we wish to load
 plugins=(
-  alias # includes common general-purpose aliases
+  alias   # includes common general-purpose aliases
+  missing # check to ensure a missing plugin throws a warning
 )
 
 # Load core library utilities
