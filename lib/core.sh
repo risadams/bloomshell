@@ -34,6 +34,26 @@ declare -a BLOOMSH_CMDS
 declare -a BLOOMSH_PLUGINS
 
 __source() {
+  : <<'DOC'
+NAME
+    __source - Source a script file and set the context based on its path.
+SYNOPSIS
+    __source [FILEPATH]
+DESCRIPTION
+    This function takes a file path as an argument, sources the script if it
+    exists and is readable, and sets the context based on the path.
+ARGUMENTS
+   FILEPATH 
+      The file path to the script. Must have a valid context
+      Contexts:
+        - For files in the 'lib/' directory: 'lib:<lib_name>'
+        - For files in the 'commands/' directory: 'commands:<command_name>'
+        - For files in the 'plugins/' directory: 'plugins:<plugin_name>'
+EXAMPLES
+   __source "lib/my_lib.sh"
+NOTES
+    This function (and any function starting with '__') should not be directly executed.  
+DOC
   local context filepath="$1"
 
   # Construct context based on path
@@ -104,6 +124,7 @@ DOC
     done
   else
     echo "Error: The directory $dir does not exist."
+    return 1
   fi
 }
 
