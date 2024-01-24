@@ -117,13 +117,16 @@ __is_plugin() {
   test -f "$base_dir/plugins/$name/$name.plugin.sh"
 }
 
-for plugin in "${plugins[@]}"; do
-  if __is_plugin "$BLOOM_ROOT" "$plugin"; then
-    __source "plugins/$plugin/$plugin.plugin.sh"
-  else
-    echo "[BLOOM] plugin '$plugin' not found"
-  fi
-done
+# If any plugins are defined, attempt to load them
+if [[ -n ${plugins+x} && ${#plugins[@]} -ne 0 ]]; then
+  for plugin in "${plugins[@]}"; do
+    if __is_plugin "$BLOOM_ROOT" "$plugin"; then
+      __source "plugins/$plugin/$plugin.plugin.sh"
+    else
+      echo "[BLOOM] plugin '$plugin' not found"
+    fi
+  done
+fi
 
 # Export the loaded libs,cmds,plugins for use in other scripts
 BLOOMSH_LIBS_STRING=$(
