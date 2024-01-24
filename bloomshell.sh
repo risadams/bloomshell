@@ -37,7 +37,8 @@ plugins=(
 source "$BLOOM_ROOT/lib/core.sh"
 
 # strip duplicate entries from the path
-export PATH="$(echo -n "$PATH" | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')"
+PATH="$(echo -n "$PATH" | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')"
+export PATH
 
 echo "Running $SCRIPT_NAME v$BLOOMSH_VERSION."
 echo "Loaded libs: $BLOOMSH_LIBS_STRING"
