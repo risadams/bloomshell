@@ -24,6 +24,8 @@ export BLOOM_ROOT=${SELF%/*}
 export BLOOMSH_VERSION="0.0.1"
 
 ## Setup Plugins we wish to load
+# Disable shellcheck complaining about unused variable
+# shellcheck disable=SC2034
 plugins=(
   alias   # includes common general-purpose aliases
   missing # check to ensure a missing plugin throws a warning
