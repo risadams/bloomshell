@@ -1,22 +1,15 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 
-
 <!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Unlicensed][license-shield]][license-url]
 
+<br />
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d83195fc2dff42a3b71c792d4fa044c4)](https://app.codacy.com/gh/risadams/bloomshell/dashboard)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -30,7 +23,7 @@
   <p align="center">
     project_description
     <br />
-    <a href="[def]"><strong>Explore the docs »</strong></a>
+    <!-- <a href="[def]"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
     <a href="[def]">View Demo</a>
@@ -40,8 +33,6 @@
     <a href="https://github.com/risadams/bloomshell/issues">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -57,7 +48,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -66,33 +56,32 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-
 ### Prerequisites
 
 ### Installation
 
 1. Clone the repo
+
    ```sh
    git clone https://github.com/risadams/bloomshell.git
    ```
 
 2. Copy needed files to your working directory
+
    ```sh
    cp ./bloomshell.sh ./lib  /my-project
    ```
 
-4. Rename the entry point script
+3. Rename the entry point script
+
    ```sh
    mv /my-project/bloomshell.sh /my-project/my-script.sh
    ```
@@ -105,8 +94,6 @@
 See the [open issues](https://github.com/risadams/bloomshell/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -123,8 +110,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
@@ -145,6 +130,7 @@ This is free and unencumbered software released into the public domain. See `LIC
 ## Acknowledgments
 
 - [ShellSpec](https://github.com/shellspec/shellspec) - BDD Unit testing framework
+- [ShellCheck](https://github.com/koalaman/shellcheck) - Static Analysis tooling
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
