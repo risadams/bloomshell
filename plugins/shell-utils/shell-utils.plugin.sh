@@ -22,4 +22,22 @@ if [ -n "$_BLOOMSH_PLUGIN_SH_UTILS_SOURCED" ]; then
 fi
 _BLOOMSH_PLUGIN_SH_UTILS_SOURCED=1
 
-#TODO...
+function fn() {
+  : <<'DOC'
+NAME
+    fn - Find by Name
+SYNOPSIS
+    fn [PATTERN]
+DESCRIPTION
+  Searches for files and directories within the current directory
+  that contain the specified pattern in their name.
+PARAMETERS
+  <pattern> - A string pattern to search for in file and directory names.
+EXAMPLES
+  fn foo      # Finds all files and directories containing 'foo'
+  fn "*.txt"  # Finds all files and directories containing '.txt'
+RETURNS
+  A list of file and directory names that match the pattern.
+DOC
+  find . -type f -name "*$1*" -o -type d -name "*$1*"
+}
